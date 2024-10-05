@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C837D6402CB0CB820042C60A /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C837D63F2CB0CB810042C60A /* OpenGL.framework */; };
+		C837D6422CB0CB9F0042C60A /* libglfw.3.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C837D6412CB0CB9F0042C60A /* libglfw.3.4.dylib */; };
+		C837D6432CB0CB9F0042C60A /* libglfw.3.4.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = C837D6412CB0CB9F0042C60A /* libglfw.3.4.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		C837D6302CB0C9EC0042C60A /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -16,10 +22,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		C837D6442CB0CB9F0042C60A /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C837D6432CB0CB9F0042C60A /* libglfw.3.4.dylib in Embed Libraries */,
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C837D6322CB0C9EC0042C60A /* MineCraftClone */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MineCraftClone; sourceTree = BUILT_PRODUCTS_DIR; };
+		C837D63F2CB0CB810042C60A /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		C837D6412CB0CB9F0042C60A /* libglfw.3.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.4.dylib; path = ../../../../../../opt/homebrew/Cellar/glfw/3.4/lib/libglfw.3.4.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -35,6 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C837D6402CB0CB820042C60A /* OpenGL.framework in Frameworks */,
+				C837D6422CB0CB9F0042C60A /* libglfw.3.4.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				C837D6342CB0C9EC0042C60A /* MineCraftClone */,
+				C837D63E2CB0CB810042C60A /* Frameworks */,
 				C837D6332CB0C9EC0042C60A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,6 +79,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		C837D63E2CB0CB810042C60A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C837D6412CB0CB9F0042C60A /* libglfw.3.4.dylib */,
+				C837D63F2CB0CB810042C60A /* OpenGL.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -67,6 +98,7 @@
 				C837D62E2CB0C9EC0042C60A /* Sources */,
 				C837D62F2CB0C9EC0042C60A /* Frameworks */,
 				C837D6302CB0C9EC0042C60A /* CopyFiles */,
+				C837D6442CB0CB9F0042C60A /* Embed Libraries */,
 			);
 			buildRules = (
 			);
@@ -245,6 +277,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					/opt/homebrew/Cellar/glfw/3.4/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					/opt/homebrew/Cellar/glfw/3.4/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -253,6 +293,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					/opt/homebrew/Cellar/glfw/3.4/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					/opt/homebrew/Cellar/glfw/3.4/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -267,7 +315,7 @@
 				C837D6382CB0C9EC0042C60A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		C837D6392CB0C9EC0042C60A /* Build configuration list for PBXNativeTarget "MineCraftClone" */ = {
 			isa = XCConfigurationList;
@@ -276,7 +324,7 @@
 				C837D63B2CB0C9EC0042C60A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
